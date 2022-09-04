@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets.user"
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/c323-big-iot-server/databases/IOT-Device-Manager",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:c323-big-iot-server.database.windows.net",
+      "secretStore": "LocalSecretsFile"
+    }
+  }
+}
