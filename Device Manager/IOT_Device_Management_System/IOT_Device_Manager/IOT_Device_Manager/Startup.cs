@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IOT_Device_Manager.Repository.Models;
 
 namespace IOT_Device_Manager
 {
