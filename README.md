@@ -6,9 +6,9 @@ In the business, using RESTful APIs and services to move data between systems, e
 You will develop a CRUD RESTful API for this project that will connect to a database containing information from IoT devices. According to the specifications of the project, the API should provide at least one get, post, patch, and delete method for each resource. Several endpoints in the RESTful API architecture can be accessed through HTTP to call application code and change databases.
 
 ## Progress Report	
-01/09/22 - Github Administration					- Complete
-02/09/22 - Prepare the Data Source 					- Complete
-03/09/22 - Project Setup							- Complete
-		   |Create the API project					- Complete
-		   |Connect the API to the data source		- Complete
-		   Build Device Management Functionality	- Inprogress
+01/09/22 - Github Administration					- Complete  
+02/09/22 - Prepare the Data Source 					- Complete  
+03/09/22 - Project Setup						- Complete  
+		   |Create the API project				- Complete  
+		   |Connect the API to the data source			- Complete  
+		   Build Device Management Functionality		- Inprogress  
