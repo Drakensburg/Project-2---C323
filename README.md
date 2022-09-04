@@ -9,6 +9,6 @@ You will develop a CRUD RESTful API for this project that will connect to a data
 01/09/22 - Github Administration					- Complete  
 02/09/22 - Prepare the Data Source 					- Complete  
 03/09/22 - Project Setup						- Complete  
-		   |Create the API project				- Complete  
-		   |Connect the API to the data source			- Complete  
-		   Build Device Management Functionality		- Inprogress  
+.................|Create the API project				- Complete  
+.................|Connect the API to the data source			- Complete  
+...........Build Device Management Functionality			- Inprogress  
