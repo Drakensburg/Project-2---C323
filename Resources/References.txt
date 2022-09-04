@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/64436514/how-can-i-create-the-free-250gb-sql-server-database-promised-with-free-azure-sub
