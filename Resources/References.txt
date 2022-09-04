@@ -1,2 +1,3 @@
 https://stackoverflow.com/questions/64436514/how-can-i-create-the-free-250gb-sql-server-database-promised-with-free-azure-sub
 https://www.youtube.com/watch?v=qSnjgEU6VwQ
+https://stackoverflow.com/questions/57066856/command-dotnet-ef-not-found
