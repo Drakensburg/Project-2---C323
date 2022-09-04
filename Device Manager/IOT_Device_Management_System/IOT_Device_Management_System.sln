@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32428.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOT_Device_Management_System", "IOT_Device_Management_System\IOT_Device_Management_System.csproj", "{FF2C4B92-350A-4610-B08D-48AA3AB2D2EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF2C4B92-350A-4610-B08D-48AA3AB2D2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF2C4B92-350A-4610-B08D-48AA3AB2D2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF2C4B92-350A-4610-B08D-48AA3AB2D2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF2C4B92-350A-4610-B08D-48AA3AB2D2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A579D53C-0972-46DF-A39D-28178F58B40D}
+	EndGlobalSection
+EndGlobal
