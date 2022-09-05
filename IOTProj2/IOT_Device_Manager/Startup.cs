@@ -29,7 +29,7 @@ namespace IOT_Device_Manager
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen(options => { options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "IOTDM", Version = "v2", Description = "Device Manager Program", }); });
+            services.AddSwaggerGen(options => { options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "IOT Device Manager", Version = "v2", Description = "Device Manager Program for an Interconnected Office Environment", }); });
             services.AddDbContext<IOTManagerDbContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
         }
 
@@ -52,7 +52,7 @@ namespace IOT_Device_Manager
                 endpoints.MapControllers();
             });
             app.UseSwagger(); 
-            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v2/swagger.json", "IOTDM"));
+            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v2/swagger.json", "IOT Device Manager"));
         }
     }
 }

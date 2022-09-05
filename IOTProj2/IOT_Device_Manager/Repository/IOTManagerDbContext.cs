@@ -28,7 +28,7 @@ namespace IOT_Device_Manager.Repository
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=c323-big-iot-server.database.windows.net;Initial Catalog=IOT-Device-Manager;User ID=Drakensburg;Password=***********");
+                optionsBuilder.UseSqlServer("Data Source=c323-big-iot-server.database.windows.net;Initial Catalog=IOT-Device-Manager;User ID=Drakensburg;Password=Cypher128");
             }
         }
 

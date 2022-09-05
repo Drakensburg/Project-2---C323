@@ -12,48 +12,48 @@ namespace IOT_Device_Manager.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class DeviceController : ControllerBase
     {
         private readonly IOTManagerDbContext _context;
 
-        public CategoriesController(IOTManagerDbContext context)
+        public DeviceController(IOTManagerDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Categories
+        // GET: api/Device
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
+        public async Task<ActionResult<IEnumerable<Device>>> GetCategory()
         {
-            return await _context.Category.ToListAsync();
+            return await _context.Device.ToListAsync();
         }
 
-        // GET: api/Categories/5
+        // GET: api/Device/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Category>> GetCategory(Guid id)
+        public async Task<ActionResult<Device>> GetDevice(Guid id)
         {
-            var category = await _context.Category.FindAsync(id);
+            var device = await _context.Device.FindAsync(id);
 
-            if (category == null)
+            if (device == null)
             {
                 return NotFound();
             }
 
-            return category;
+            return device;
         }
 
-        // PUT: api/Categories/5
+        // PUT: api/Device/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(Guid id, Category category)
+        public async Task<IActionResult> PutDevice(Guid id, Device device)
         {
-            if (id != category.CategoryId)
+            if (id != device.DeviceId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(category).State = EntityState.Modified;
+            _context.Entry(device).State = EntityState.Modified;
 
             try
             {
@@ -61,7 +61,7 @@ namespace IOT_Device_Manager.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CategoryExists(id))
+                if (!DeviceExists(id))
                 {
                     return NotFound();
                 }
@@ -74,20 +74,20 @@ namespace IOT_Device_Manager.Controllers
             return NoContent();
         }
 
-        // POST: api/Categories
+        // POST: api/Device
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Category>> PostCategory(Category category)
+        public async Task<ActionResult<Device>> PostCategory(Device device)
         {
-            _context.Category.Add(category);
+            _context.Device.Add(device);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (CategoryExists(category.CategoryId))
+                if (DeviceExists(device.DeviceId))
                 {
                     return Conflict();
                 }
@@ -97,28 +97,28 @@ namespace IOT_Device_Manager.Controllers
                 }
             }
 
-            return CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
+            return CreatedAtAction("GetDevice", new { id = device.CategoryId }, device);
         }
 
-        // DELETE: api/Categories/5
+        // DELETE: api/Device/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Category>> DeleteCategory(Guid id)
+        public async Task<ActionResult<Device>> DeleteDevice(Guid id)
         {
-            var category = await _context.Category.FindAsync(id);
-            if (category == null)
+            var device = await _context.Device.FindAsync(id);
+            if (device == null)
             {
                 return NotFound();
             }
 
-            _context.Category.Remove(category);
+            _context.Device.Remove(device);
             await _context.SaveChangesAsync();
 
-            return category;
+            return device;
         }
 
-        private bool CategoryExists(Guid id)
+        private bool DeviceExists(Guid id)
         {
-            return _context.Category.Any(e => e.CategoryId == id);
+            return _context.Device.Any(e => e.DeviceId == id);
         }
     }
 }
