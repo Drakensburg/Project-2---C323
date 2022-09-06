@@ -42,36 +42,6 @@ namespace IOT_Device_Manager.Controllers
             return category;
         }
 
-        // PUT: api/Category/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(Guid id, Category category)
-        {
-            if (id != category.CategoryId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(category).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CategoryExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
         // POST: api/Category
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory(Category category)
@@ -94,6 +64,37 @@ namespace IOT_Device_Manager.Controllers
             }
 
             return CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
+        }
+
+        // Patch: api/Category/5
+        [HttpPatch("{id}")]
+        public async Task<ActionResult<Category>> CategoryDevice(Guid id)
+        {
+            var category = await _context.Category.FindAsync(id);
+
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            _context.Category.Update(category);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (CategoryExists(category.CategoryId))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return category;
         }
 
         // DELETE: api/Category/5
