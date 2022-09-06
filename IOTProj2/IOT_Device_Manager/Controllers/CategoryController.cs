@@ -43,8 +43,6 @@ namespace IOT_Device_Manager.Controllers
         }
 
         // PUT: api/Category/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategory(Guid id, Category category)
         {
@@ -75,8 +73,6 @@ namespace IOT_Device_Manager.Controllers
         }
 
         // POST: api/Category
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {

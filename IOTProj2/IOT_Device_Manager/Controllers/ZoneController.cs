@@ -42,41 +42,7 @@ namespace IOT_Device_Manager.Controllers
             return zone;
         }
 
-        // PUT: api/Zone/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutZone(Guid id, Zone zone)
-        {
-            if (id != zone.ZoneId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(zone).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ZoneExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
         // POST: api/Zone
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<Category>> PostZone(Zone zone)
         {
@@ -100,6 +66,37 @@ namespace IOT_Device_Manager.Controllers
             return CreatedAtAction("GetZone", new { id = zone.ZoneId }, zone);
         }
 
+        // Patch: api/Zone/5
+        [HttpPatch("{id}")]
+        public async Task<ActionResult<Zone>> ZoneDevice(Guid id)
+        {
+            var zone = await _context.Zone.FindAsync(id);
+
+            if (zone == null)
+            {
+                return NotFound();
+            }
+
+            _context.Zone.Update(zone);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (ZoneExists(zone.ZoneId))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return zone;
+        }
+
         // DELETE: api/Zone/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Zone>> DeleteZone(Guid id)
@@ -120,5 +117,23 @@ namespace IOT_Device_Manager.Controllers
         {
             return _context.Zone.Any(e => e.ZoneId == id);
         }
+
+        // GET: api/ZoneDevices/5
+        /*[HttpGet("{id}")]
+        public async Task<ActionResult<Device>> GetZoneDevices(Guid id)
+        {
+            var zoneId   = await _context.Zone.FindAsync(id);
+
+            if (zoneId == null)
+            {
+                return NotFound();
+            }
+            else if (zoneId.ZoneId == Device)
+            {
+
+            }
+
+            return zoneId;
+        }*/
     }
 }
