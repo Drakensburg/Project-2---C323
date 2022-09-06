@@ -23,7 +23,7 @@ namespace IOT_Device_Manager.Controllers
 
         // GET: api/Device
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Device>>> GetCategory()
+        public async Task<ActionResult<IEnumerable<Device>>> GetDevice()
         {
             return await _context.Device.ToListAsync();
         }
@@ -42,43 +42,9 @@ namespace IOT_Device_Manager.Controllers
             return device;
         }
 
-        // PUT: api/Device/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutDevice(Guid id, Device device)
-        {
-            if (id != device.DeviceId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(device).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!DeviceExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
         // POST: api/Device
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Device>> PostCategory(Device device)
+        public async Task<ActionResult<Device>> PostDevice(Device device)
         {
             _context.Device.Add(device);
             try
@@ -98,6 +64,37 @@ namespace IOT_Device_Manager.Controllers
             }
 
             return CreatedAtAction("GetDevice", new { id = device.CategoryId }, device);
+        }
+
+        // Patch: api/Device/5
+        [HttpPatch("{id}")]
+        public async Task<ActionResult<Device>> PatchDevice(Guid id)
+        {
+            var device = await _context.Device.FindAsync(id);
+
+            if (device == null)
+            {
+                return NotFound();
+            }
+
+            _context.Device.Update(device);
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                if (DeviceExists(device.DeviceId))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return device;
         }
 
         // DELETE: api/Device/5

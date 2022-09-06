@@ -11,4 +11,9 @@ You will develop a CRUD RESTful API for this project that will connect to a data
 03/09/22 - Project Setup								- Complete  
 				|Create the API project					- Complete  
 				|Connect the API to the data source		- Complete  
-		   Build Device Management Functionality		- Inprogress  
+04/09/22 - Build Device Management Functionality		- Complete  
+06/09/22 - Build Zone Management Functionality			- Inprogress  
+		   Build Category Management Functionality		- Inprogress  
+		   Security										- Inprogress  
+		   Web Api Hosting								- Inprogress  
+		   Project Documentation						- Inprogress  

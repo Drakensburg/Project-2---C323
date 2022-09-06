@@ -12,11 +12,11 @@ namespace IOT_Device_Manager.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class IOTController : ControllerBase
+    public class CategoryController : ControllerBase
     {
         private readonly IOTManagerDbContext _context;
 
-        public IOTController(IOTManagerDbContext context)
+        public CategoryController(IOTManagerDbContext context)
         {
             _context = context;
         }
