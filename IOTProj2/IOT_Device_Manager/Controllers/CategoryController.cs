@@ -22,14 +22,14 @@ namespace IOT_Device_Manager.Controllers
         }
 
         // GET: api/Category
-        [HttpGet]
+        [HttpGet("Retrieve all Categories")]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
         {
             return await _context.Category.ToListAsync();
         }
 
         // GET: api/Category/5
-        [HttpGet("{id}")]
+        [HttpGet("Retrieve Category via ID")]
         public async Task<ActionResult<Category>> GetCategory(Guid id)
         {
             var category = await _context.Category.FindAsync(id);
@@ -43,7 +43,7 @@ namespace IOT_Device_Manager.Controllers
         }
 
         // POST: api/Category
-        [HttpPost]
+        [HttpPost("Post Category")]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {
             _context.Category.Add(category);
@@ -66,39 +66,21 @@ namespace IOT_Device_Manager.Controllers
             return CreatedAtAction("GetCategory", new { id = category.CategoryId }, category);
         }
 
-        // Patch: api/Category/5
-        [HttpPatch("{id}")]
-        public async Task<ActionResult<Category>> CategoryDevice(Guid id)
+        // PATCH: api/Category/5
+        [HttpPatch("Patch Category via ID")]
+        public async Task<ActionResult<Category>> UpdateCategory(Guid CategoryId, [FromBody] string CategoryName, string CategoryDescription, DateTime DateCreated)
         {
-            var category = await _context.Category.FindAsync(id);
+            var category = await _context.Category.FindAsync(CategoryId);
 
-            if (category == null)
-            {
-                return NotFound();
-            }
-
-            _context.Category.Update(category);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (CategoryExists(category.CategoryId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            category.CategoryName        = CategoryName;
+            category.CategoryDescription = CategoryDescription;
+            category.DateCreated         = DateCreated;
 
             return category;
         }
 
         // DELETE: api/Category/5
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete Category via ID")]
         public async Task<ActionResult<Category>> DeleteCategory(Guid id)
         {
             var category = await _context.Category.FindAsync(id);
@@ -116,6 +98,56 @@ namespace IOT_Device_Manager.Controllers
         private bool CategoryExists(Guid id)
         {
             return _context.Category.Any(e => e.CategoryId == id);
+        }
+
+        // GET: api/CategoryDevices/5
+        [HttpGet("Retrieve Category defined Devices")]
+        public async Task<List<Device>> GetCategoryDevices(Guid id)
+        {
+
+            var query = from category in _context.Category
+                        join device in _context.Device
+                        on category.CategoryId equals device.CategoryId
+                        where category.CategoryId == id
+                        select new
+                        {
+                            device.DeviceId,
+                            device.DeviceName,
+                            device.CategoryId
+                        };
+
+            var CategoryDevices = await query.ToListAsync().ConfigureAwait(false);
+
+            return CategoryDevices
+                    .Select(CategoryDevices => new Device()
+                    {
+                        DeviceId = CategoryDevices.DeviceId,
+                        DeviceName = CategoryDevices.DeviceName,
+                        CategoryId = CategoryDevices.CategoryId
+                    })
+                        .ToList();
+        }
+
+        // GET: api/CountZones/5
+        [HttpGet("Count Zones per Categories")]
+        public int CountZonesPerCategories()
+        {
+
+            var query = from device in _context.Device
+                        join category in _context.Category
+                        on device.CategoryId equals category.CategoryId
+                        join zone in _context.Zone
+                        on device.ZoneId equals zone.ZoneId
+                        where category.CategoryId == device.CategoryId & device.ZoneId == zone.ZoneId
+                        select new
+                        {
+                            zone.ZoneId,
+                            zone.ZoneName,
+                        };
+
+            int Count = query.Count();
+
+            return Count;
         }
     }
 }

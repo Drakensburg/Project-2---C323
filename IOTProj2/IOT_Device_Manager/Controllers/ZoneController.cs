@@ -22,14 +22,14 @@ namespace IOT_Device_Manager.Controllers
         }
 
         // GET: api/Zone
-        [HttpGet]
+        [HttpGet("Retrieve all Zones")]
         public async Task<ActionResult<IEnumerable<Zone>>> GetZone()
         {
             return await _context.Zone.ToListAsync();
         }
 
         // GET: api/Zone/5
-        [HttpGet("{id}")]
+        [HttpGet("Retrieve Zone via ID")]
         public async Task<ActionResult<Zone>> GetZone(Guid id)
         {
             var zone = await _context.Zone.FindAsync(id);
@@ -43,7 +43,7 @@ namespace IOT_Device_Manager.Controllers
         }
 
         // POST: api/Zone
-        [HttpPost]
+        [HttpPost("Post new Zone")]
         public async Task<ActionResult<Category>> PostZone(Zone zone)
         {
             _context.Zone.Add(zone);
@@ -66,39 +66,21 @@ namespace IOT_Device_Manager.Controllers
             return CreatedAtAction("GetZone", new { id = zone.ZoneId }, zone);
         }
 
-        // Patch: api/Zone/5
-        [HttpPatch("{id}")]
-        public async Task<ActionResult<Zone>> ZoneDevice(Guid id)
+        // PATCH: api/Zone/5
+        [HttpPatch("Patch Zone via ID")]
+        public async Task<ActionResult<Zone>> UpdateZone(Guid ZoneId, [FromBody] string ZoneName, string ZoneDescription, DateTime DateCreated)
         {
-            var zone = await _context.Zone.FindAsync(id);
+            var zone = await _context.Zone.FindAsync(ZoneId);
 
-            if (zone == null)
-            {
-                return NotFound();
-            }
-
-            _context.Zone.Update(zone);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (ZoneExists(zone.ZoneId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            zone.ZoneName        = ZoneName;
+            zone.ZoneDescription = ZoneDescription;
+            zone.DateCreated     = DateCreated;
 
             return zone;
         }
 
         // DELETE: api/Zone/5
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete Zone via ID")]
         public async Task<ActionResult<Zone>> DeleteZone(Guid id)
         {
             var zone = await _context.Zone.FindAsync(id);
@@ -119,21 +101,31 @@ namespace IOT_Device_Manager.Controllers
         }
 
         // GET: api/ZoneDevices/5
-        /*[HttpGet("{id}")]
-        public async Task<ActionResult<Device>> GetZoneDevices(Guid id)
+        [HttpGet("Retrieve Zone defined Devices")]
+        public async Task<List<Device>> GetZoneDevices(Guid id)
         {
-            var zoneId   = await _context.Zone.FindAsync(id);
 
-            if (zoneId == null)
-            {
-                return NotFound();
-            }
-            else if (zoneId.ZoneId == Device)
-            {
+            var query = from zone in _context.Zone
+                        join device in _context.Device
+                        on zone.ZoneId equals device.ZoneId
+                        where zone.ZoneId == id
+                        select new
+                        {
+                            device.DeviceId,
+                            device.DeviceName,
+                            device.ZoneId
+                        };
 
-            }
+            var ZoneDevices = await query.ToListAsync().ConfigureAwait(false);
 
-            return zoneId;
-        }*/
+            return ZoneDevices
+                    .Select(ZoneDevices => new Device()
+                    {
+                         DeviceId = ZoneDevices.DeviceId,
+                         DeviceName = ZoneDevices.DeviceName,
+                         ZoneId = ZoneDevices.ZoneId
+                    })
+                        .ToList();
+        }
     }
 }

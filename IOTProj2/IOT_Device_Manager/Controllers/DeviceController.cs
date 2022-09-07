@@ -22,14 +22,14 @@ namespace IOT_Device_Manager.Controllers
         }
 
         // GET: api/Device
-        [HttpGet]
+        [HttpGet("Retrieve all Devices")]
         public async Task<ActionResult<IEnumerable<Device>>> GetDevice()
         {
             return await _context.Device.ToListAsync();
         }
 
         // GET: api/Device/5
-        [HttpGet("{id}")]
+        [HttpGet("Retrieve Device via ID")]
         public async Task<ActionResult<Device>> GetDevice(Guid id)
         {
             var device = await _context.Device.FindAsync(id);
@@ -43,7 +43,7 @@ namespace IOT_Device_Manager.Controllers
         }
 
         // POST: api/Device
-        [HttpPost]
+        [HttpPost("Post new Device")]
         public async Task<ActionResult<Device>> PostDevice(Device device)
         {
             _context.Device.Add(device);
@@ -66,39 +66,24 @@ namespace IOT_Device_Manager.Controllers
             return CreatedAtAction("GetDevice", new { id = device.CategoryId }, device);
         }
 
-        // Patch: api/Device/5
-        [HttpPatch("{id}")]
-        public async Task<ActionResult<Device>> PatchDevice(Guid id)
+        // PATCH: api/Device/5
+        [HttpPatch("Patch Device via ID")]
+        public async Task<ActionResult<Device>> UpdateDevice(Guid DeviceId, [FromBody] string DeviceName, Guid CategoryId, Guid ZoneId, string Status, bool IsActvie, DateTime DateCreated)
         {
-            var device = await _context.Device.FindAsync(id);
+            var device = await _context.Device.FindAsync(DeviceId);
 
-            if (device == null)
-            {
-                return NotFound();
-            }
-
-            _context.Device.Update(device);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (DeviceExists(device.DeviceId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            device.DeviceName   = DeviceName;
+            device.CategoryId   = CategoryId;
+            device.ZoneId       = ZoneId;
+            device.Status       = Status;
+            device.IsActvie     = IsActvie;
+            device.DateCreated  = DateCreated;
 
             return device;
         }
 
         // DELETE: api/Device/5
-        [HttpDelete("{id}")]
+        [HttpDelete("Delete Device via ID")]
         public async Task<ActionResult<Device>> DeleteDevice(Guid id)
         {
             var device = await _context.Device.FindAsync(id);
