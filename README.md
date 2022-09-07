@@ -15,5 +15,5 @@ You will develop a CRUD RESTful API for this project that will connect to a data
 06/09/22 - Build Zone Management Functionality			- Complete  
 07/09/22 - Build Category Management Functionality		- Complete  
 		   Security										- Complete   
-		   Web Api Hosting								- Inprogress  
-		   Project Documentation						- Inprogress  
+		   Web Api Hosting								- Complete  
+		   Project Documentation						- Complete  
