@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "chsQrDoGGjul2joUD2uR7Z2xfidjl7zRtw2rtiDmg8FR6YMcpef6q5QIJ+rnxN0YAajjIT/VZ8G5/ICW7fh/Vg==",
+  "dgSpecHash": "LvE3Ydo8lP74KC1YGajasGMvcjwmYFaM7Uh2KLtpEZhScNok6tzJTV9dpi0q5ZfOeUEvZDehzgtmYW5srTQI/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\Attempt2\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj",
+  "projectFilePath": "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\A3\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tjaar\\.nuget\\packages\\libuv\\1.10.0\\libuv.1.10.0.nupkg.sha512",
     "C:\\Users\\Tjaar\\.nuget\\packages\\microsoft.aspnetcore\\2.0.0\\microsoft.aspnetcore.2.0.0.nupkg.sha512",

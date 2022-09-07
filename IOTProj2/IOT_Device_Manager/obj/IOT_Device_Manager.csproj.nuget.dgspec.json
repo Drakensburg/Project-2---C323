@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\Attempt2\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj": {}
+    "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\A3\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\Attempt2\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj": {
+    "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\A3\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\Attempt2\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj",
+        "projectUniqueName": "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\A3\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj",
         "projectName": "IOT_Device_Manager",
-        "projectPath": "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\Attempt2\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj",
+        "projectPath": "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\A3\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj",
         "packagesPath": "C:\\Users\\Tjaar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\Attempt2\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\obj\\",
+        "outputPath": "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\A3\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

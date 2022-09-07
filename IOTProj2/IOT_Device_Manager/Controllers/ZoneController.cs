@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using IOT_Device_Manager.Repository;
 using IOT_Device_Manager.Repository.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace IOT_Device_Manager.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class ZoneController : ControllerBase
     {
