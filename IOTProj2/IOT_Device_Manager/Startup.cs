@@ -40,11 +40,12 @@ namespace IOT_Device_Manager
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen(options => { options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "IOT Device Manager", Version = "v2", Description = "Device Manager Program for an Interconnected Office Environment", }); });
+            services.AddSwaggerGen();
+            services.AddSwaggerGen(options => { options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "IOT Device Manager", Version = "v1", Description = "Device Manager Program for an Interconnected Office Environment", }); });
             services.AddDbContext<IOTManagerDbContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 
             // For Entity Framework  
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnStr")));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionStrings")));
 
             // For Identity  
             services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -84,6 +85,9 @@ namespace IOT_Device_Manager
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "IOT Device Manager"));
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -95,8 +99,6 @@ namespace IOT_Device_Manager
             {
                 endpoints.MapControllers();
             });
-            app.UseSwagger();
-            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v2/swagger.json", "IOT Device Manager"));
         }
     }
 }

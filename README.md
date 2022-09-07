@@ -14,6 +14,6 @@ You will develop a CRUD RESTful API for this project that will connect to a data
 04/09/22 - Build Device Management Functionality		- Complete  
 06/09/22 - Build Zone Management Functionality			- Complete  
 07/09/22 - Build Category Management Functionality		- Complete  
-		   Security										- Complete   
-		   Web Api Hosting								- Complete  
-		   Project Documentation						- Complete  
+				|Security								- Complete   
+				|Web Api Hosting						- Complete  
+				|Project Documentation					- Complete  
