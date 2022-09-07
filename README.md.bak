@@ -1,9 +1,9 @@
 # Project 2 - IoT Device Manager
 ## Background
-Wi-Fi-enabled gadgets, security lighting, smart locks, and voice controls are just a few examples of smart devices that can connect and share data over the Internet. Devices that are part of distributed ecosystems may monitor the environment in houses and other structures. It is essential to make IoT device capabilities and data available online. As IoT deployments vary in size, complexity, aims, and needs, an IoT Device Management System enables you to register, organize, monitor, and remotely manage IoT devices at scale.
-All of the IoT devices that an organization has deployed are tracked by an IoT Device Management System. Different types of gadgets are employed depending on the type of organization. Each IoT device is initially registered and assigned a category. Then, IoT devices are installed in designated zones throughout the organization's structures. Administrators have access to every IoT device and can examine it, modify its settings, add new devices, and transfer it to different zones. Web services over HTTP are modeled and designed using the Representational State Transfer (REST) architectural style. The Cloud may be used to manage IoT devices when this paradigm is utilized to develop APIs. As a result, a set of RESTful APIs should be used to create the IoT Device Management System.
+Wi-Fi-enabled gadgets, security lighting, smart locks, and voice controls are just a few examples of smart devices that can connect and share data over the Internet. Devices that are part of distributed ecosystems may monitor the environment in houses and other structures. It is essential to make IoT device capabilities and data available online. As IoT deployments vary in size, complexity, aims, and needs, an IoT Device Management System enables you to register, organize, monitor, and remotely manage IoT devices at scale.  
+All of the IoT devices that an organization has deployed are tracked by an IoT Device Management System. Different types of gadgets are employed depending on the type of organization. Each IoT device is initially registered and assigned a category. Then, IoT devices are installed in designated zones throughout the organization's structures. Administrators have access to every IoT device and can examine it, modify its settings, add new devices, and transfer it to different zones. Web services over HTTP are modeled and designed using the Representational State Transfer (REST) architectural style. The Cloud may be used to manage IoT devices when this paradigm is utilized to develop APIs. As a result, a set of RESTful APIs should be used to create the IoT Device Management System.  
 In the business, using RESTful APIs and services to move data between systems, environments, interfaces, and applications is considered best practice. Connecting a RESTful API to a data source in order to control interaction with the data source is one of the most popular use cases. This method has several benefits for a solution that largely deals with lifespan. RESTful APIs frequently include a variety of techniques for retrieving and manipulating data (creation, amendment and deletion).
-You will develop a CRUD RESTful API for this project that will connect to a database containing information from IoT devices. According to the specifications of the project, the API should provide at least one get, post, patch, and delete method for each resource. Several endpoints in the RESTful API architecture can be accessed through HTTP to call application code and change databases.
+You will develop a CRUD RESTful API for this project that will connect to a database containing information from IoT devices. According to the specifications of the project, the API should provide at least one get, post, patch, and delete method for each resource. Several endpoints in the RESTful API architecture can be accessed through HTTP to call application code and change databases.  
 
 ## Progress Report	
 01/09/22 - Github Administration						- Complete  
@@ -14,6 +14,12 @@ You will develop a CRUD RESTful API for this project that will connect to a data
 04/09/22 - Build Device Management Functionality		- Complete  
 06/09/22 - Build Zone Management Functionality			- Complete  
 07/09/22 - Build Category Management Functionality		- Complete  
-		   Security										- Complete   
-		   Web Api Hosting								- Complete  
-		   Project Documentation						- Complete  
+<<<<<<< HEAD
+				|Security								- Complete   
+				|Web Api Hosting						- Complete  
+				|Project Documentation					- Complete  
+=======
+		   |Security										- Complete   
+		   |Web Api Hosting								- Stuck  
+		   |Project Documentation						- Complete  
+>>>>>>> 1c7ecb221f5d4a1538f67679cff9817b18a61907
