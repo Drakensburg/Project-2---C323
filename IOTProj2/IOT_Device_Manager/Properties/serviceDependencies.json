@@ -6,6 +6,10 @@
     "mssql1": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:c323-big-iot-server.database.windows.net"
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DefaultConnection"
     }
   }
 }
