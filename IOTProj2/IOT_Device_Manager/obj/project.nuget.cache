@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yfl/wMqPNknJTHMoxDLNZCKx5fyuT8Ko2j81OKU70imQlccE9x8Ub87y/GlB4X0SOpQKMX9Kr3/IOfA0io+tmA==",
+  "dgSpecHash": "9ECWMBlueu490Su6L3UoGvzSbqd7g62+vWaHHOBiOOLpaAeJXAd5ehXsDhYDrBWCj9Qz+5NSTW/Ys0g0HUC8uQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\A3\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj",
+  "projectFilePath": "C:\\Users\\Tjaar\\OneDrive\\Documents\\GitHub\\Project-2---C323---34588353\\IOTProj2\\IOT_Device_Manager\\IOT_Device_Manager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tjaar\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Tjaar\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

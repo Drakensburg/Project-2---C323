@@ -10,6 +10,6 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>IOT_Device_Manager.Repository.IOTManagerDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
-    <NameOfLastUsedPublishProfile>C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\Properties\PublishProfiles\IOT-Device-Manager-ConnectedOffice - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\Properties\PublishProfiles\IOT-Device-Manager-ConnectedOffice - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
