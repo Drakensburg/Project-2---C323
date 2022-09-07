@@ -732,3 +732,4 @@ C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2
 C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Debug\netcoreapp3.1\IOT_Device_Manager.dll
 C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Debug\netcoreapp3.1\IOT_Device_Manager.pdb
 C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Debug\netcoreapp3.1\IOT_Device_Manager.genruntimeconfig.cache
+C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\bin\Debug\netcoreapp3.1\global.json

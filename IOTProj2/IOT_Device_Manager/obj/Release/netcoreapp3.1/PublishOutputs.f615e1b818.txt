@@ -1,6 +1,7 @@
 C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\IOT_Device_Manager.exe
 C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
 C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
+C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\global.json
 C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\IOT_Device_Manager.dll
 C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\IOT_Device_Manager.runtimeconfig.json
 C:\Users\Tjaar\OneDrive\Documents\GitHub\A3\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\IOT_Device_Manager.pdb
