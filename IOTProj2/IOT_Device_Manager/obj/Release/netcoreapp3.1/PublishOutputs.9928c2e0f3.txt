@@ -1,7 +1,6 @@
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\IOT_Device_Manager.exe
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.Development.json
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\appsettings.json
-C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\global.json
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\IOT_Device_Manager.dll
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\IOT_Device_Manager.runtimeconfig.json
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\IOT_Device_Manager.pdb
@@ -55,6 +54,7 @@ C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IO
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.Bson.dll
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\NuGet.Frameworks.dll
+C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\Swashbuckle.AspNetCore.dll
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\Swashbuckle.AspNetCore.Newtonsoft.dll
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Tjaar\OneDrive\Documents\GitHub\Project-2---C323---34588353\IOTProj2\IOT_Device_Manager\obj\Release\netcoreapp3.1\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll

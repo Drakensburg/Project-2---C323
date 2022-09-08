@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using IOT_Device_Manager.Authentication;
+using Microsoft.OpenApi.Models;
 
 namespace IOT_Device_Manager
 {
@@ -27,69 +28,88 @@ namespace IOT_Device_Manager
         {
             services.AddControllers();
             services.AddSwaggerGen();
-            services.AddSwaggerGen(options => { options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "IOT Device Manager", Version = "v1", Description = "Device Manager Program for an Interconnected Office Environment", }); });
-            services.AddDbContext<IOTManagerDbContext>(options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+            services.AddDbContext<IOTManagerDbContext>(options => options.UseSqlServer("name=ConnectionStrings:ConnStr"));
 
-            // For Entity Framework  
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionStrings")));
+            services.AddSwaggerGen(c => {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "IOT Device Manager",
+                    Version = "v1",
+                    Description = "An API to manage an interconnected office"
+                });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "User Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 5XadTf2dGdHi\"",
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                {
+                    new OpenApiSecurityScheme {
+                         Reference = new OpenApiReference {
+                                     Type = ReferenceType.SecurityScheme,
+                                       Id = "Bearer"
+                         }
+                },
+                     new string[] {}
+                }
+                });
+            });
 
-            // For Identity  
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnStr")));
 
-            // Adding Authentication  
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-
-            // Adding Jwt Bearer  
             .AddJwtBearer(options =>
             {
-                options.SaveToken = true;
-                options.RequireHttpsMetadata = false;
-                options.TokenValidationParameters = new TokenValidationParameters()
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidAudience = Configuration["JWT:ValidAudience"],
-                    ValidIssuer = Configuration["JWT:ValidIssuer"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
-                };
+                    options.SaveToken = true;
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidAudience = Configuration["JWT:ValidAudience"],
+                        ValidIssuer = Configuration["JWT:ValidIssuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
+                    };
             });
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-            public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseDefaultFiles();
+
+            app.UseStaticFiles();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger(c =>
-                {
-                    c.SerializeAsV2 = true;
-                });
-                // Enable middleware to serve generated Swagger as a JSON endpoint.
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("v1/swagger.json", "IOT Device Manager V1");
-                });
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
-            app.UseAuthentication();  
+            app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
+            app.UseEndpoints(endpoints => 
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger(); app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "IOT Device Manager"));
         }
     }
 }
