@@ -17,3 +17,7 @@ You will develop a CRUD RESTful API for this project that will connect to a data
 				|Security								- Complete   
 				|Web Api Hosting						- Complete  
 				|Project Documentation					- Complete  
+
+## API MANAGER
+![image](https://user-images.githubusercontent.com/91900992/189648698-07457aa3-0917-4ee9-a9df-3ce70ca6691b.png)
+![image](https://user-images.githubusercontent.com/91900992/189648881-67a710f6-47df-4684-9bdc-c23a4b4a9e04.png)
